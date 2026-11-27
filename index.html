@@ -582,6 +582,7 @@
             <span>{{имя}} · психолог-консультант · {{город}}</span>
             <span class="foot__more" data-slot-optional>{{юрлицо}} · ИНН {{ИНН}}</span>
             <span>Консультация не заменяет помощь врача</span>
+            <span><button type="button" class="pd-open" data-pd-open>Политика конфиденциальности</button></span>
             <span class="foot__warn">Работаю как психолог-консультант: без медицинских услуг, диагнозов и рецептов.</span>
           </footer>
         </div>
@@ -668,5 +669,74 @@
     set(0);
   })();
 </script>
+
+<!-- ===== Политика конфиденциальности (ФЗ-152) ===== -->
+<style>
+.pd-open{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.pd-open:hover{opacity:.75}
+.pd-modal{position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;padding:20px;background:rgb(12 14 20 / .62);backdrop-filter:blur(4px);font-family:inherit}
+.pd-modal.is-open{display:flex}
+.pd-modal__box{position:relative;width:min(700px,100%);max-height:84vh;overflow:auto;background:#fff;color:#1d2027;border-radius:16px;padding:36px 40px 32px;box-shadow:0 24px 64px rgb(0 0 0 / .38);font-size:15px;line-height:1.6}
+.pd-modal__box h2{margin:0 40px 6px 0;font-size:1.35rem;line-height:1.25;color:#14161b}
+.pd-modal__box .pd-date{margin:0 0 14px;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:#6b7280}
+.pd-modal__box h3{margin:18px 0 6px;font-size:1rem;color:#14161b}
+.pd-modal__box p{margin:0 0 10px}
+.pd-modal__box ul{margin:0 0 10px;padding-left:20px}
+.pd-modal__box li{margin-bottom:4px}
+.pd-modal__x{position:absolute;top:14px;right:16px;width:36px;height:36px;border:0;border-radius:50%;background:#eef0f4;color:#1d2027;font-size:20px;line-height:1;cursor:pointer}
+.pd-modal__x:hover{background:#e2e5eb}
+@media (max-width:600px){.pd-modal__box{padding:26px 20px;border-radius:12px}}
+</style>
+<div class="pd-modal" id="pd-modal" role="dialog" aria-modal="true" aria-labelledby="pd-title" hidden>
+  <div class="pd-modal__box">
+    <button class="pd-modal__x" type="button" data-pd-close aria-label="Закрыть">×</button>
+    <h2 id="pd-title">Политика обработки персональных данных</h2>
+    <p class="pd-date">в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных»</p>
+    
+    <h3>1. Общие положения</h3>
+    <p>Настоящая Политика определяет порядок обработки персональных данных и меры по обеспечению их безопасности на сайте «{имя} · психолог-консультант» (далее — Сайт), составлена в соответствии с Федеральным законом от 27.07.2006 № 152-ФЗ «О персональных данных».</p>
+    <p>Оператор персональных данных: [ФИО / ИП «Название»], ИНН [ИНН], ОГРНИП [ОГРНИП], адрес: [юридический адрес], e-mail: [почта], телефон: [телефон] (далее — Оператор).</p>
+    <h3>2. Состав обрабатываемых персональных данных</h3>
+    <p>Сайт обрабатывает данные, которые посетитель добровольно передаёт при обращении через формы, мессенджеры или телефон:</p>
+    <ul>
+      <li>имя;</li>
+      <li>номер телефона;</li>
+      <li>иные сведения, указанные посетителем в сообщении (например, удобное время для связи).</li>
+    </ul>
+    <p>Сайт не собирает специальные категории персональных данных (состояние здоровья, биометрические данные и т. п.).</p>
+    <h3>3. Цели обработки</h3>
+    <ul>
+      <li>связь с посетителем по его запросу: консультация, запись, расчёт стоимости;</li>
+      <li>ответы на обращения и информирование об услугах по запросу посетителя.</li>
+    </ul>
+    <h3>4. Правовые основания обработки</h3>
+    <p>Обработка осуществляется на основании согласия субъекта персональных данных (ст. 6, 9 ФЗ-152), выражаемого отправкой формы или обращением через указанные на Сайте каналы связи.</p>
+    <h3>5. Порядок и сроки обработки и хранения</h3>
+    <p>Персональные данные обрабатываются с использованием средств автоматизации и без них, хранятся не дольше, чем этого требуют цели обработки, и уничтожаются по достижении целей либо по запросу субъекта. Оператор принимает правовые, организационные и технические меры для защиты данных от неправомерного или случайного доступа, изменения и распространения.</p>
+    <h3>6. Передача третьим лицам</h3>
+    <p>Персональные данные не передаются третьим лицам, за исключением случаев, предусмотренных законодательством РФ, а также сервисов связи, используемых для ответа на обращение (телефония, мессенджеры), — в объёме, необходимом для связи с посетителем.</p>
+    <h3>7. Cookie и технические данные</h3>
+    <p>Сайт не использует cookie-файлы для сбора персональных данных и не подключён к аналитическим системам, собирающим персональные данные.</p>
+    <h3>8. Права субъекта персональных данных</h3>
+    <p>Вы вправе запросить уточнение, блокирование или уничтожение своих персональных данных, получить информацию об их обработке и отозвать согласие, направив обращение Оператору на [почта] с пометкой «Персональные данные».</p>
+    <h3>9. Изменение Политики</h3>
+    <p>Оператор вправе обновлять настоящую Политику. Актуальная редакция всегда доступна по ссылке в подвале Сайта. Дата обновления: [дата].</p>
+
+  </div>
+</div>
+<script>
+(function () {
+  var modal = document.getElementById('pd-modal');
+  if (!modal) return;
+  function open(e) { if (e) e.preventDefault(); modal.hidden = false; requestAnimationFrame(function () { modal.classList.add('is-open'); }); document.body.style.overflow = 'hidden'; }
+  function close() { modal.classList.remove('is-open'); modal.hidden = true; document.body.style.overflow = ''; }
+  document.querySelectorAll('[data-pd-open]').forEach(function (b) { b.addEventListener('click', open); });
+  modal.querySelector('[data-pd-close]').addEventListener('click', close);
+  modal.addEventListener('click', function (e) { if (e.target === modal) close(); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
+  window.pdClose = close;
+})();
+</script>
+
 </body>
 </html>
